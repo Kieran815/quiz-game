@@ -99,7 +99,7 @@ const App = () => {
         {!gameOver ? (
           <div>
             <p className='score'>Score: {score}</p>
-            <p className='setting'>Difficutly: {mode === Difficulty.Normal ? 'Normal' : 'Hard'}</p>
+            <p className='setting'>Difficulty: {mode === Difficulty.Normal ? 'Normal' : 'Hard'}</p>
           </div>
         ) : ''}
         {loading ? <p>Loading Quiz</p> : ''}

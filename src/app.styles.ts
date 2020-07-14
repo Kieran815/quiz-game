@@ -3,8 +3,10 @@ import QuizBG from './quizBG.jpg';
 
 // use `createGlobalStyle` for global styling
 export const  QuizStyle = createGlobalStyle`
+// set styles like you would in a css file
   html {
     height: 100%;
+    max-height: 100vh;
   }
 
   body {
@@ -41,7 +43,7 @@ export const Wrapper = styled.div`
   }
 
   h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: 'Baloo Da 2', sans-serif;
     background-image: linear-gradient(180deg, #fff, #87f1ff);
     background-size: 100%;
     background-clip: text;
@@ -79,5 +81,6 @@ export const Wrapper = styled.div`
   .newGame {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;

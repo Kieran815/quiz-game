@@ -34,7 +34,7 @@ export const ButtonStyle = styled.div<ButtonStyleProps>`
   button {
     cursor: pointer;
     user-select: none;
-    font-size: 0.7rem;
+    font-size: 2rem;
     width: 100%;
     height: 40px;
     margin: 5px 0;
