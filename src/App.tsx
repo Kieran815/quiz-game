@@ -25,9 +25,7 @@ const App = () => {
   const [gameOver, setGameOver] =  useState(true);
   // `mode` created to set difficulty
   const [mode, setMode] = useState<Difficulty>(Difficulty.Normal);
-  
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, mode));
-  //
+
   const startQuiz = async () => {
     setLoading(true);
     setGameOver(false);
@@ -80,26 +78,25 @@ const App = () => {
     <>
       <QuizStyle />
       <Wrapper>
-        <h1>Quiz</h1>
         {/* Ternary Op to conditionally render `Start` button, `Score`, and `QuestionCard` */}
+        {gameOver ? <h1>Comics Quiz</h1> : null}
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ?
           (
             <div className='newGame'>
               <h2>Select Difficulty</h2>
+              <sub>(for real, though, it's difficult...)</sub>               
               <div className='settings'>
                 <button className='modeSelect' onClick={() => setMode(Difficulty.Normal)}>Normal</button>
                 <button className='modeSelect' onClick={() => setMode(Difficulty.Hard)}>Hard</button>
               </div>
               {mode !== undefined ? <button className='start' onClick={startQuiz}>Start</button> : "Select Difficulty"}
             </div>
-            
           ) : 
           null
         }
         {!gameOver ? (
-          <div>
-            <p className='score'>Score: {score}</p>
-            <p className='setting'>Difficulty: {mode === Difficulty.Normal ? 'Normal' : 'Hard'}</p>
+          <div className='setting'>
+            <p>Difficulty: {mode === Difficulty.Normal ? 'Normal' : 'Hard'} <br/>Score: {score}</p>
           </div>
         ) : ''}
         {loading ? <p>Loading Quiz</p> : ''}
